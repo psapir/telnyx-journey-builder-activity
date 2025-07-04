@@ -19,8 +19,8 @@ export async function index(req, res){
 };
 
 export async function webhook(req, res) {
- console.log(`${req.body.toString('utf8')}`);
- res.send(200);
+ console.log('Webhook payload:', req.body);
+ res.sendStatus(200);
 };
 
 export async function txml(req, res) {
