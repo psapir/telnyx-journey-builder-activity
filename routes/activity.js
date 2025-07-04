@@ -10,7 +10,7 @@ const telnyx = new Telnyx(process.env.TELNYX_API_KEY);
 
 exports.logExecuteData = [];
 
-exports.call = async function (req, res) {
+export async function call(req, res) {
     const { to, message, language, voice } = req.body;
 
     if (!to || !message) {
@@ -35,7 +35,7 @@ exports.call = async function (req, res) {
 /*
  * POST Handler for /execute/ route of Activity.
  */
-exports.execute = async function (req, res) {
+export async function execute(req, res) {
     try {
         // example on how to decode JWT
         JWT(req.body, process.env.jwtSecret, async (err, decoded) => {
@@ -83,7 +83,7 @@ exports.execute = async function (req, res) {
 /*
  * POST Handler for /publish/ route of Activity.
  */
-exports.publish = function (req, res) {
+export async function publish(req, res) {
     console.log(`Publish Event: ${req.body.toString('utf8')}`);
     res.send(200, 'Publish');
 };
@@ -91,7 +91,7 @@ exports.publish = function (req, res) {
 /*
  * POST Handler for /validate/ route of Activity.
  */
-exports.validate = function (req, res) {
+export async function validate(req, res) {
     console.log(`Validate Event: ${req.body.toString('utf8')}`);
     res.send(200, 'Validate');
 };
@@ -100,7 +100,7 @@ exports.validate = function (req, res) {
 /*
  * POST Handler for / route of Activity (this is the edit route).
  */
-exports.edit = function (req, res) {
+export async function edit(req, res) {
     console.log(`Edit Event: ${req.body.toString('utf8')}`);
     res.send(200, 'Edit');
 };
@@ -108,7 +108,7 @@ exports.edit = function (req, res) {
 /*
  * POST Handler for /save/ route of Activity.
  */
-exports.save = function (req, res) {
+export async function save(req, res) {
     console.log(`Save Event: ${req.body.toString('utf8')}`);
     res.send(200, 'Save');
 };

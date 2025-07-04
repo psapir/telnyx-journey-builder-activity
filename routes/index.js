@@ -6,7 +6,7 @@ import activity from './activity.js';
 /*
  * GET home page.
  */
-exports.index = function(req, res){
+export async function index(req, res){
     if( !req.session.token ) {
         res.render( 'index', {
             title: 'Unauthenticated',
@@ -20,7 +20,7 @@ exports.index = function(req, res){
     }
 };
 
-exports.txml = function (req, res) {
+export async function txml(req, res) {
     const message = req.query.message || "Hello, this is a test call.";
     const language = req.query.language || "en-US";
     const voice = req.query.voice || "female"; // 'female' or 'male'
@@ -33,11 +33,11 @@ exports.txml = function (req, res) {
     `);
 };
 
-exports.login = function( req, res ) {
+export async function login( req, res ) {
     console.log( 'req.body: ', req.body );
     res.redirect( '/' );
 };
 
-exports.logout = function( req, res ) {
+export async function logout( req, res ) {
     req.session.token = '';
 };
