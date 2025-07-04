@@ -8,4 +8,4 @@ function movecss(done) {
 
 var build = gulp.series(movecss);
 
-exports.default = build;
+export default build;
