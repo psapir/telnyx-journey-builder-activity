@@ -14,12 +14,7 @@ export async function call(req, res) {
     }
 
     try {
-        console.log({
-    connection_id: process.env.TELNYX_CONNECTION_ID,
-    to,
-    from: process.env.TELNYX_PHONE_NUMBER,
-    answer_url: `https://${process.env.SERVER_DOMAIN}/txml?message=${encodeURIComponent(message)}&language=${encodeURIComponent(language || 'en-US')}&voice=${encodeURIComponent(voice || 'female')}`
-});
+       
         const call = await telnyx.calls.create({
             connection_id: process.env.TELNYX_CONNECTION_ID,
             to,
@@ -29,7 +24,7 @@ export async function call(req, res) {
 
         res.json({ success: true, call_control_id: call.data.call_control_id });
     } catch (err) {
-        console.error(err);
+        console.error('Telnyx Error:', JSON.stringify(err, null, 2));
         res.status(500).json({ error: "Failed to make the call" });
     }
 };
