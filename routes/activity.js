@@ -14,6 +14,12 @@ export async function call(req, res) {
     }
 
     try {
+        console.log({
+    connection_id: process.env.TELNYX_CONNECTION_ID,
+    to,
+    from: process.env.TELNYX_PHONE_NUMBER,
+    answer_url: `https://${process.env.SERVER_DOMAIN}/txml?message=${encodeURIComponent(message)}&language=${encodeURIComponent(language || 'en-US')}&voice=${encodeURIComponent(voice || 'female')}`
+});
         const call = await telnyx.calls.create({
             connection_id: process.env.TELNYX_CONNECTION_ID,
             to,
