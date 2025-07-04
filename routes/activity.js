@@ -19,7 +19,7 @@ export async function call(req, res) {
             connection_id: process.env.TELNYX_CONNECTION_ID,
             to,
             from: process.env.TELNYX_PHONE_NUMBER,
-            answer_url: `https://${process.env.SERVER_DOMAIN}/telnyx/txml?message=${encodeURIComponent(message)}&language=${encodeURIComponent(language || 'en-US')}&voice=${encodeURIComponent(voice || 'female')} `
+            url: `https://${process.env.SERVER_DOMAIN}/telnyx/txml?message=${encodeURIComponent(message)}&language=${encodeURIComponent(language || 'en-US')}&voice=${encodeURIComponent(voice || 'female')} `
         });
 
         res.json({ success: true, call_control_id: call.data.call_control_id });
