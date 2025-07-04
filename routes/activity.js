@@ -109,3 +109,25 @@ export async function save(req, res) {
     console.log(`Save Event: ${req.body.toString('utf8')}`);
     res.send(200, 'Save');
 };
+
+export async function webhook(req, res) {
+ console.log('Webhook payload:', req.body);
+ res.status(200).send('webhook');
+};
+
+export async function txml(req, res) {
+    const message = req.query.message || "Hello, this is a test call.";
+    const language = req.query.language || "en-US";
+    const voice = req.query.voice || "female"; // 'female' or 'male'
+    console.log(`
+        <Response>
+            <SpeakSentence language="${language}" voice="${voice}">${message}</SpeakSentence>
+        </Response>
+    `);
+    res.type('text/xml');
+    res.send(`
+        <Response>
+            <SpeakSentence language="${language}" voice="${voice}">${message}</SpeakSentence>
+        </Response>
+    `);
+};

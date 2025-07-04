@@ -36,8 +36,8 @@ app.post('/journeybuilder/execute', activity.execute );
 app.post('/call',activity.call);
 
 //telnyx routes
-app.get('/telnyx/txml', routes.txml)
-app.post('/telnyx/webhook', routes.webhook)
+app.get('/telnyx/txml', activity.txml)
+app.post('/telnyx/webhook', activity.webhook)
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
