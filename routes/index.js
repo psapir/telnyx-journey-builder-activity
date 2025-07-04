@@ -1,6 +1,6 @@
 export async function webhook(req, res) {
  console.log('Webhook payload:', req.body);
- res.sendStatus(200);
+ res.send(200, 'webhook');
 };
 
 export async function txml(req, res) {
