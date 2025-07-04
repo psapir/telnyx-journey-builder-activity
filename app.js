@@ -9,6 +9,9 @@ import path from 'path';
 import routes from './routes/index.js';
 import * as activity from './routes/activity.js';
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 var app = express();
 
 // Configure Express
