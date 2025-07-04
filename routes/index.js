@@ -1,23 +1,3 @@
-// Deps
-import * as activity from './activity.js';
-
-/*
- * GET home page.
- */
-export async function index(req, res){
-    if( !req.session.token ) {
-        res.render( 'index', {
-            title: 'Unauthenticated',
-            errorMessage: 'This app may only be loaded via Salesforce Marketing Cloud',
-        });
-    } else {
-        res.render( 'index', {
-            title: 'Journey Builder Activity',
-            results: activity.logExecuteData,
-        });
-    }
-};
-
 export async function webhook(req, res) {
  console.log('Webhook payload:', req.body);
  res.sendStatus(200);
@@ -38,13 +18,4 @@ export async function txml(req, res) {
             <SpeakSentence language="${language}" voice="${voice}">${message}</SpeakSentence>
         </Response>
     `);
-};
-
-export async function login( req, res ) {
-    console.log( 'req.body: ', req.body );
-    res.redirect( '/' );
-};
-
-export async function logout( req, res ) {
-    req.session.token = '';
 };
