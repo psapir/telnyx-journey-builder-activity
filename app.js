@@ -29,11 +29,11 @@ if ('development' == app.get('env')) {
 }
 
 // Custom Activity Routes
-app.post('/journeybuilder/save/', activity.save );
-app.post('/journeybuilder/validate/', activity.validate );
-app.post('/journeybuilder/publish/', activity.publish );
-app.post('/journeybuilder/execute/', activity.execute );
-app.post('/call/',activity.call);
+app.post('/journeybuilder/save', activity.save );
+app.post('/journeybuilder/validate', activity.validate );
+app.post('/journeybuilder/publish', activity.publish );
+app.post('/journeybuilder/execute', activity.execute );
+app.post('/call',activity.call);
 
 //telnyx routes
 app.get('/txml', routes.txml)
