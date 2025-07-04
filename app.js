@@ -1,4 +1,3 @@
-'use strict';
 // Module Dependencies
 // -------------------
 import express from 'express';

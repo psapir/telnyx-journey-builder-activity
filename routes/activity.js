@@ -1,5 +1,3 @@
-'use strict';
-
 // Deps
 import Telnyx from 'telnyx';
 import Path from 'path';

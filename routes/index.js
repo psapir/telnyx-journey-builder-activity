@@ -1,5 +1,3 @@
-'use strict';
-
 // Deps
 import activity from './activity.js';
 
