@@ -1,13 +1,13 @@
 'use strict';
 // Module Dependencies
 // -------------------
-var express     = require('express');
-var bodyParser  = require('body-parser');
-var errorhandler = require('errorhandler');
-var http        = require('http');
-var path        = require('path');
-var routes      = require('./routes');
-var activity    = require('./routes/activity');
+import express from 'express';
+import bodyParser from 'body-parser';
+import errorhandler from 'errorhandler';
+import http from 'http';
+import path from 'path';
+import routes from './routes/index.js';
+import * as activity from './routes/activity.js';
 
 var app = express();
 

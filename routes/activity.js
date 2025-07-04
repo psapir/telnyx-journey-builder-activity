@@ -1,15 +1,16 @@
 'use strict';
 
 // Deps
-const Path = require('path');
-const JWT = require(Path.join(__dirname, '..', 'lib', 'jwtDecoder.js'));
-const axios = require('axios');
-const telnyx = require('telnyx');
+import Telnyx from 'telnyx';
+import Path from 'path';
+import axios from 'axios';
+import JWT from '../lib/jwtDecoder.js';
+
+const telnyx = new Telnyx(process.env.TELNYX_API_KEY);
 
 exports.logExecuteData = [];
 
 exports.call = async function (req, res) {
-    telnyx.apiKey = process.env.TELNYX_API_KEY;
     const { to, message, language, voice } = req.body;
 
     if (!to || !message) {

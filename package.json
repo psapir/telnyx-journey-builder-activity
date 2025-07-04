@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "telnyx-activity-template",
   "version": "2.0.0",
   "description": "Example of Journey Builder Activity for Telnyx",
