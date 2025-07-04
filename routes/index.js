@@ -1,5 +1,5 @@
 // Deps
-import activity from './activity.js';
+import * as activity from './activity.js';
 
 /*
  * GET home page.
