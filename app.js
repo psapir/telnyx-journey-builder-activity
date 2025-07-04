@@ -5,8 +5,10 @@ import bodyParser from 'body-parser';
 import errorhandler from 'errorhandler';
 import http from 'http';
 import path from 'path';
-import routes from './routes/index.js';
+import * as routes from './routes/index.js';
 import * as activity from './routes/activity.js';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

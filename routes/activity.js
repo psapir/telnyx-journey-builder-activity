@@ -6,8 +6,6 @@ import JWT from '../lib/jwtDecoder.js';
 
 const telnyx = new Telnyx(process.env.TELNYX_API_KEY);
 
-exports.logExecuteData = [];
-
 export async function call(req, res) {
     const { to, message, language, voice } = req.body;
 
