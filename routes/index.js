@@ -20,6 +20,19 @@ exports.index = function(req, res){
     }
 };
 
+exports.txml = function (req, res) {
+    const message = req.query.message || "Hello, this is a test call.";
+    const language = req.query.language || "en-US";
+    const voice = req.query.voice || "female"; // 'female' or 'male'
+
+    res.type('text/xml');
+    res.send(`
+        <Response>
+            <SpeakSentence language="${language}" voice="${voice}">${message}</SpeakSentence>
+        </Response>
+    `);
+};
+
 exports.login = function( req, res ) {
     console.log( 'req.body: ', req.body );
     res.redirect( '/' );

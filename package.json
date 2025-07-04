@@ -1,7 +1,7 @@
 {
-  "name": "jb-activity-template",
+  "name": "telnyx-activity-template",
   "version": "2.0.0",
-  "description": "Journey Builder Activity Template",
+  "description": "Example of Journey Builder Activity for Telnyx",
   "engines": {
     "node": ">=20"
   },
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/psapir/journey-builder-activity-template.git"
+    "url": "git+https://github.com/psapir/telnyx-journey-builder-activity.git"
   },
   "keywords": [
     "journey builder",
@@ -21,9 +21,9 @@
   "author": "Pato Sapir",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/psapir/journey-builder-activity-template/issues"
+    "url": "https://github.com/psapir/telnyx-journey-builder-activity/issues"
   },
-  "homepage": "https://github.com/psapir/journey-builder-activity-template#readme",
+  "homepage": "https://github.com/psapir/telnyx-journey-builder-activity#readme",
   "dependencies": {
     "@salesforce-ux/design-system": "^2.27.2",
     "axios": "^1.8.4",
