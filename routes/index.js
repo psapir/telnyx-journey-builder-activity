@@ -18,6 +18,11 @@ export async function index(req, res){
     }
 };
 
+export async function webhook(req, res) {
+ console.log(`${req.body.toString('utf8')}`);
+ res.send(200);
+};
+
 export async function txml(req, res) {
     const message = req.query.message || "Hello, this is a test call.";
     const language = req.query.language || "en-US";
